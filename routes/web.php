@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DataController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\SellproductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,13 +19,9 @@ use App\Http\Controllers\DashboardController;
 Route::get('/', function () {
     return view('welcome');
 });
-/*
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-*/
 
 Route::get('/dashboard', [DashboardController::class, 'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/sellproduct/{id?}', [SellproductController::class, 'sellProduct'])->middleware(['auth', 'verified'])->name('sellProduct');
 
 Route::middleware('auth')->group(function () {
     // Route::view('/invoices','invoices')->name('invoices');
@@ -34,6 +31,5 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-
 
 require __DIR__.'/auth.php';
