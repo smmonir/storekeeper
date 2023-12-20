@@ -11,9 +11,9 @@
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                   <p>Total Sales: {{ $totalSell }}</p>
                   <p>Today Total Sales : {{ $todayTotalSell }}</p>
-                  <p>Yesterday Total Sales : {{ $todayTotalSell }}</p>
-                  <p>This Month Total Sales : {{ $todayTotalSell }}</p>
-                  <p>Last Month Total Sales : {{ $todayTotalSell }}</p>
+                  <p>Yesterday Total Sales : {{ $yesterdayTotalSell }}</p>
+                  <p>This Month Total Sales : {{ $thismonthTotalSell }}</p>
+                  <p>Last Month Total Sales : {{ $lastmonthTotalSell }}</p>
                 </div>
             </div>
         </div>
