@@ -15,7 +15,6 @@ class SellproductController extends Controller
             $result = DB::table('products')
                 ->where('id', '=', $id)
                 ->decrement('stock');
-            
             return response("Productc Stock Updated");
         }
     }
